@@ -1,7 +1,7 @@
-name: Get & Cache Dependencies
-descriptopn: Get the dependencies (via NPM) and cache them
+name: 'Get & Cache Dependencies'
+descriptopn: 'Get the dependencies (via NPM) and cache them'
 runs:
-  using: composite
+  using: 'composite'
   steps:
     - name: Cache dependencies
         id: cache
