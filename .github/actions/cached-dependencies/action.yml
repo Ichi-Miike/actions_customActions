@@ -15,8 +15,8 @@ runs:
   using: 'composite'
   steps:
     - name: Cache dependencies
-      if: inputs.cacheing == 'true'
       id: cache
+      if: inputs.cacheing == 'true'
       uses: actions/cache@v4
       with:
         path: node_modules
@@ -27,6 +27,6 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true' || inputs.cacheing != 'true'
       run: |
         npm ci
-        echo "cache='${{ inputs.disable-cacheing}}'" >> $GITHUB_OUTPUT
+        echo "cache='${{ inputs.cacheing}}'" >> $GITHUB_OUTPUT
 
       shell: bash
