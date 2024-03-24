@@ -24,5 +24,7 @@ runs:
 
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true' || inputs.disable-cacheing == 'true'
-      run: npm ci
+      run: |
+        npm ci
+        echo "cache=${{ inputs.disable-cacheing}} >> $GITHUB_OUTPUT"
       shell: bash
