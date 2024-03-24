@@ -20,7 +20,7 @@ jobs:
         run: npm run lint
 
       - name: Display whether cache was used
-        run: "echo 'Cache Disabled: ${{ steps.load-dependencies.outputs.cache-used}}'"
+        run: "echo 'Cache Hit: ${{ steps.load-dependencies.outputs.cache-used}}'"
   test:
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +36,7 @@ jobs:
         run: npm run test
 
       - name: Display whether cache was used
-        run: "echo 'Cache Disabled: ${{ steps.load-dependencies.outputs.cache-used }}'"
+        run: "echo 'Cache Hit: ${{ steps.load-dependencies.outputs.cache-used }}'"
 
       
       - name: Upload test report
@@ -57,7 +57,7 @@ jobs:
         uses: ./.github/actions/cached-dependencies
       
       - name: Display whether cache was used
-        run: "echo 'Cache Disabled: ${{ steps.load-dependencies.outputs.cache-used }}'"
+        run: "echo 'Cache Hit: ${{ steps.load-dependencies.outputs.cache-used }}'"
       - name: Build website
         run: npm run build
       

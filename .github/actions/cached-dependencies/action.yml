@@ -1,21 +1,21 @@
 name: 'Get & Cache Dependencies'
 descripton: 'Get the dependencies (via NPM) and cache them'
 inputs:
-  disable-cacheing:
-    description: Disables the cacheing step, ensuring dependencies are ALWAYS installed
+  cacheing:
+    description: Specifies whether the cacheing step should be run if required
     required: false
-    default: 'false'
+    default: 'true'
 
 outputs:
   cache-used:
     description: Specifies whether the cache was used
-    value: ${{ inputs.disable-cacheing }}
+    value: ${{ steps.install.outputs.cache }}
 
 runs:
   using: 'composite'
   steps:
     - name: Cache dependencies
-      if: inputs.disable-cacheing != 'true'
+      if: inputs.cacheing == 'true'
       id: cache
       uses: actions/cache@v4
       with:
@@ -24,8 +24,9 @@ runs:
 
     - name: Install dependencies
       id: install
-      if: steps.cache.outputs.cache-hit != 'true' || inputs.disable-cacheing == 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || inputs.cacheing != 'true'
       run: |
         npm ci
+        echo "cache='${{ inputs.disable-cacheing}}'" >> $GITHUB_OUTPUT
 
       shell: bash
