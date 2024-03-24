@@ -27,6 +27,6 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true' || inputs.cacheing != 'true'
       run: |
         npm ci
-        echo "cache='fred'" >> $GITHUB_OUTPUT
+        echo "cache='fred'" >> "$GITHUB_OUTPUT"
 
       shell: bash
