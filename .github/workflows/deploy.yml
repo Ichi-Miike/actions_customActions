@@ -23,7 +23,7 @@ jobs:
     
       - name: Load and cache dependencies
         uses: ./.github/actions/cached-dependencies
-      
+        
       - name: Test code
         id: run-tests
         run: npm run test
@@ -69,6 +69,6 @@ jobs:
 
       - name: Output contents
         run: ls
-        
+
       - name: Deploy site
         run: echo "Deploying..."

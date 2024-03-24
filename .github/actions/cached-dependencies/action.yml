@@ -1,5 +1,5 @@
 name: 'Get & Cache Dependencies'
-descriptopn: 'Get the dependencies (via NPM) and cache them'
+descripton: 'Get the dependencies (via NPM) and cache them'
 runs:
   using: 'composite'
   steps:
