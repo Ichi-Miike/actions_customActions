@@ -86,3 +86,9 @@ jobs:
 
       - name: Deploy site
         run: echo "Deploying..."
+
+  information:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use JS Action
+        uses: ./.github/actions/javascript
