@@ -6,7 +6,7 @@ function run() {
  
     core.notice('This is a message printed from core.notice');
 
-    console.log('This one comes from console.log');
+    //console.log('This one comes from console.log');
 }
 
 run();
