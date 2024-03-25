@@ -29,8 +29,9 @@ runs:
       shell: bash
       run: |
         npm ci
-        echo "::set-output name=cache::'${{ inputs.cacheing }}'"
+        echo "The value I want to set is ${{ inputs.cacheing }}"
+        echo "cache='${{ inputs.cacheing }}'" >> $GITHUB_OUTPUT
         
     - name: Test Output
       shell: bash
-      run: echo "The output is '${{ steps.install.outputs.cacheing }}"
+      run: echo "The output is '${{ steps.install.outputs.cache }}"
