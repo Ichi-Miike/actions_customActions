@@ -26,8 +26,11 @@ runs:
     - name: Install dependencies
       id: install
       if: steps.cache.outputs.cache-hit != 'true' || inputs.cacheing != 'true'
+      shell: bash
       run: |
         npm ci
         echo "::set-output name=cache::'${{ inputs.cacheing }}'"
-
+        
+    - name: Test Output
       shell: bash
+      run: echo "The output is '${{ steps.install.outputs.cacheing }}"

@@ -14,7 +14,7 @@ jobs:
         id: load-dependencies
         uses: ./.github/actions/cached-dependencies
         with:
-          disable-cacheing: 'true'
+          cacheing: 'false'
       
       - name: Lint code
         run: npm run lint
