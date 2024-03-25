@@ -2,4 +2,4 @@ name: Javascript based action
 description: A GitHub action written in Javascript
 runs:
   using: node20
-  mainL: main.js
+  main: main.js
