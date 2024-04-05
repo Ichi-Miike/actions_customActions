@@ -92,5 +92,9 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+
+      - name: Install packages
+        run: npm install
+        
       - name: Use JS Action
         uses: ./.github/actions/javascript
