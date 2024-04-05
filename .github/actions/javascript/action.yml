@@ -12,6 +12,11 @@ inputs:
     description: The folder containing the deployable files
     required: true
 
+outputs:
+  output-value:
+    description: The value to be output by the action
+
+
 runs:
   using: node20
   main: main.js

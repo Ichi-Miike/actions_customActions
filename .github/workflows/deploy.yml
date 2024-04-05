@@ -90,4 +90,8 @@ jobs:
           bucket: bucket-name
           dist-folder: ./dist
           #bucket-region: us-east-2
+      
+      - name: Display Outputs
+        run: |
+          echo "Output Value: ${{ steps.deploy.outputs.output-value }}"
 

@@ -13,6 +13,9 @@ function run() {
     const s3Uri = `s3://${bucket}`
     //exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 
+    //  3. Set the output value
+    core.setOutput('output-value', 'This is the value being output');
+
 
     core.notice('This is a message printed from core.notice');
     console.log();
