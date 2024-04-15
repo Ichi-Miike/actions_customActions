@@ -85,7 +85,7 @@ jobs:
         run: ls
 
       - name: Deploy site
-        uses: ./.github/actions/javascript
+        uses: ./.github/actions/docker
         with:
           bucket: bucket-name
           dist-folder: ./dist
